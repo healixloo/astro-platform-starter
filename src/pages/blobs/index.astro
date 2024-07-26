@@ -6,11 +6,9 @@ import { uploadDisabled } from '../../utils';
 import ContextAlert from '../../components/ContextAlert.astro';
 
 const explainer = `
-**Join Us on This Journey**
+**At X-Intelligence Catalyst, we believe that investing should be as dynamic as the startups we support. Whether you’re a seasoned investor or new to the world of startup funding, our platform offers a unique opportunity to be part of something greater.**
 
-At X-Intelligence Catalyst, we believe that investing should be as dynamic as the startups we support. Whether you’re a seasoned investor or new to the world of startup funding, our platform offers a unique opportunity to be part of something greater.
-
-Sign up today to become a pioneer in the future of investment and experience firsthand the excitement of nurturing the next generation of innovative businesses.
+**Sign up today to become a pioneer in the future of investment and experience firsthand the excitement of nurturing the next generation of innovative businesses.**
 
 **X-Intelligence Catalyst – Where Your Investment Meets Innovation.** 🙂
 `;
@@ -30,7 +28,7 @@ User uploads are disabled in this site. To run your own and try it out:
         }}
         class="mb-6"
     />
-    <h1 class="mb-8">The Team</h1>
+    <h1 class="mb-8"  style={{ fontSize: '30px',  fontWeight: 'normal'}}>Join Us on This Journey</h1>
     <Markdown content={explainer} class="mb-12" />
     <ShapeEditor client:load />
 </Layout>
