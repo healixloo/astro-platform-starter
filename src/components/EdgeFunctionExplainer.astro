@@ -7,16 +7,13 @@ const explainer = `
 - **Diversity**: Access a broad spectrum of innovative startups across various industries, allowing you to diversify your investment portfolio.
 - **Community**: Join a community of forward-thinking investors and visionary entrepreneurs, all driven by a shared passion for innovation and growth.
 ~~~js
-const rewrite = async (request, context) => {
-    const path = context.geo?.country?.code === 'AU' ? '/edge/australia' : '/edge/not-australia';
-    return new URL(path, request.url);
-};
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
 
-export const config = {
-    path: '/edge'
-};
-
-export default rewrite;
+console.log("Hello, World!");
 ~~~
 
 [See more examples](https://edge-functions-examples.netlify.app)
