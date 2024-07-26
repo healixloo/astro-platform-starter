@@ -20,7 +20,7 @@ const sizes = '(max-width: 1024px) 100vw, 1024px';
 const astroImageSnippet = `
 ## About us
 
-Astro's \`Image\` component will automatically use Netlify Image CDN to serve optimized images.
+Astro's \`Image\` component will automatically use Netlify Image to serve optimized images.
 
 ~~~jsx
 ---
@@ -42,7 +42,7 @@ Note that aside from Astro's \`Image\` or rolling your own \`<img>\` tags, you c
 // <== On the left, the original image
 <img src="/images/corgi.jpg" alt="Corgi" />
 
-// ==> On the right, explicitly using Netlify Image CDN endpoint for a responsive image
+// ==> On the right, explicitly using Netlify Image endpoint for a responsive image
 <img 
   srcSet="${sampleImageSrcSet}"
   sizes="${sizes}" 
@@ -57,7 +57,7 @@ detection, so format is set to WebP.
 `;
 ---
 
-<Layout title="Image CDN">
+<Layout title="Image">
     <div class="flex flex-col gap-12 sm:gap-16">
         <section class="space-y-8">
             <ContextAlert
@@ -65,7 +65,7 @@ detection, so format is set to WebP.
                     return ctx === 'dev' ? devModeWarning : null;
                 }}
             />
-            <h1>Image CDN</h1>
+            <h1>Image</h1>
         </section>
         <section>
             <Markdown content={astroImageSnippet} class="mb-8" />

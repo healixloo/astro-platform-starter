@@ -15,7 +15,7 @@ Object.entries(headers).map(([k, v]) => {
 
 const explainer = `
 
-**How It Works**
+*Working process*
 
 1. **Invest in the Future**: Users can buy shares in a diverse range of promising startups, much like trading stocks. Each investment gives you a stake in the next wave of innovation.
 
@@ -31,7 +31,7 @@ const exampleTag = tags[randomInt(0, tags.length - 1)];
 ---
 
 <Layout title="Revalidation">
-    <h1 class="mb-10">Revalidating Server Content</h1>
+    <h1 class="mb-10">How It Works</h1>
     <Markdown content={explainer} class="mb-10" />
     <button class="revalidate-button btn btn-primary" data-tag={exampleTag}>Invalidate tag: {exampleTag}</button>
     <button class="btn btn-primary" onclick="location.reload()">Reload page</button>
