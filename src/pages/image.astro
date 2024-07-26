@@ -18,36 +18,27 @@ const sampleImageSrcSet = [640, 1280, 2048]
 const sizes = '(max-width: 1024px) 100vw, 1024px';
 
 const astroImageSnippet = `
-## About us
+## Our vision
 
-Astro's \`Image\` component will automatically use Netlify Image to serve optimized images.
+At X-Intelligence, our vision is to create a fair and transparent investment environment where every dollar is utilized to its fullest potential. We strive to pave the way for a bright and exciting future by empowering excellent startups to emerge and shine. Through our platform, we aim to transform innovative ideas into reality and make dreams come true for both entrepreneurs and investors.
 
-~~~jsx
----
-import { Image } from 'astro:assets';
-import corgi from '../assets/corgi.jpg';
----
-// Later in your markup...
-<Image src={corgi} alt="Corgi" /* ... additional props */ />
+~~~c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
 ~~~
 `;
 
 const originalVsCdnSnippet = `
-## Original vs. optimized image: can you tell the difference?
+## Before vs after: we will make a difference?
 
-In the code below, a regular \`<img>\` tag is used in both cases for a framework-agnostic example. 
-Note that aside from Astro's \`Image\` or rolling your own \`<img>\` tags, you can also use the excellent [unpic-img](https://unpic.pics/) package.
+By empowering entrepreneurs and engaging investors in meaningful ways, we aim to bring forth a wave of exceptional startups that drive progress and inspire change. Our vision is to make a tangible difference—creating opportunities, fostering innovation, and realizing dreams. Together, we will make the future brighter, more exciting, and filled with endless possibilities.
 
-~~~jsx
-// <== On the left, the original image
-<img src="/images/corgi.jpg" alt="Corgi" />
-
-// ==> On the right, explicitly using Netlify Image endpoint for a responsive image
-<img 
-  srcSet="${sampleImageSrcSet}"
-  sizes="${sizes}" 
-  alt="Corgi" 
-/>
+~~~python
+print("Hello, World!")
 ~~~
 `;
 
