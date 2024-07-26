@@ -2,8 +2,10 @@
 import Markdown from './Markdown.astro';
 
 const explainer = `
-This page is using a Netlify Edge Function (\`netlify/edge-functions/rewrite.js\`) to rewrite the URL based on visitor geography.
-
+- Transparency: Get a clear view of where your money is going and how it’s being utilized. Regular reports and open communication channels with startups keep you informed.
+- Engagement: Build a relationship with the startups you invest in. Participate in exclusive product releases, feedback sessions, and strategic discussions.
+- Diversity: Access a broad spectrum of innovative startups across various industries, allowing you to diversify your investment portfolio.
+- Community: Join a community of forward-thinking investors and visionary entrepreneurs, all driven by a shared passion for innovation and growth.
 ~~~js
 const rewrite = async (request, context) => {
     const path = context.geo?.country?.code === 'AU' ? '/edge/australia' : '/edge/not-australia';

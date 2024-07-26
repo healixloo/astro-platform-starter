@@ -14,21 +14,17 @@ Object.entries(headers).map(([k, v]) => {
 });
 
 const explainer = `
-This is a server-rendered page, last created at \`${new Date().toUTCString()}\` with a few extra response headers:
 
-~~~js
-${JSON.stringify(headers, null, 2)}
-~~~
+**How It Works**
 
-Meaning: **for browsers,** this is a non-cacheable page. At the **CDN level,** it *is* cacheable for up to a year (and Netlify also automatically busts the cache on new deployments, by default).
+1. **Invest in the Future**: Users can buy shares in a diverse range of promising startups, much like trading stocks. Each investment gives you a stake in the next wave of innovation.
 
-But there's something more: the \`Cache-Tag\` header, in tandem with the [purge API](https://docs.netlify.com/platform/caching/#on-demand-invalidation), allows a developer to invalidate at will any
-pieces of content (pages, JSON responses, or whatnot) based on the tags associated with them. Tags are completely up to you to decide on, and allow for very powerful patterns.
+2. **Engage Directly**: Unlike traditional investment models, [Platform Name] fosters direct interaction between investors and startups. Shareholders have exclusive access to products, participate in Q&A sessions with founders, and attend meetings to understand the company's vision and progress.
 
-In real-world applications, you may want to use [stale-while-revalidate](https://docs.netlify.com/platform/caching/#stale-while-revalidate-directive) as well, so that end-users don't experience 
-a performance hit as pages are being rebuilt.
+3. **Informed Decisions**: Regular updates, product reviews, and founder interactions empower investors to make well-informed decisions. Decide whether to hold, buy more, or sell your shares based on the latest insights and performance metrics.
 
-Use the button below to invlidate a random tag out of this page's tags, then refresh the page.
+4. **Regulated and Secure**: Our platform operates under stringent regulatory standards to ensure a safe and transparent investment environment. We prioritize the protection of both investors and startups, adhering to the highest levels of compliance and security.
+
 `;
 
 const exampleTag = tags[randomInt(0, tags.length - 1)];
