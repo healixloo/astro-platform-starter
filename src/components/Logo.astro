@@ -1,5 +1,6 @@
 ---
-const logoPath = '../../public/logo.png'; // Path to your PNG file
+const { width = "auto", height = "auto" } = Astro.props;
 ---
 
-<img src={logoPath} alt="Logo" class="image" />
+<img src="/logo.png" alt="Logo" width={width} height={height} style="max-width: 100%; height: auto;">
+
