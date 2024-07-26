@@ -18,8 +18,6 @@ const sampleImageSrcSet = [640, 1280, 2048]
 const sizes = '(max-width: 1024px) 100vw, 1024px';
 
 const astroImageSnippet = `
-## Our vision
-
 At X-Intelligence, our vision is to create a fair and transparent investment environment where every dollar is utilized to its fullest potential. We strive to pave the way for a bright and exciting future by empowering excellent startups to emerge and shine. Through our platform, we aim to transform innovative ideas into reality and make dreams come true for both entrepreneurs and investors.
 
 ~~~js
@@ -56,7 +54,7 @@ detection, so format is set to WebP.
                     return ctx === 'dev' ? devModeWarning : null;
                 }}
             />
-            <h1 class="mb-10" style={{ fontSize: '30px',  fontWeight: 'normal'}} What do we expect?</h1>
+            <h1> class="mb-10" style={{ fontSize: '30px',  fontWeight: 'normal'}} What do we expect?</h1>
         </section>
         <section>
             <Markdown content={astroImageSnippet} class="mb-8" />
