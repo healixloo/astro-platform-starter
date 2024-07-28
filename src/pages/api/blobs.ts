@@ -38,3 +38,20 @@ export const GET: APIRoute = async ({ request }) => {
         );
     }
 };
+
+
+export const DELETE: APIRoute = async ({ request }) => {
+    const { key } = await request.json();
+    if (!key) {
+        return new Response('Bad Request', { status: 400 });
+    }
+
+    const blobStore = getStore('shapes');
+    await blobStore.delete(key);
+    return new Response(
+        JSON.stringify({
+            message: `Deleted shape "${key}"`
+        }),
+        { status: 200 }
+    );
+};
