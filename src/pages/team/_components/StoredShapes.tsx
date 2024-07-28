@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import ShapePreview from './ShapePreview.tsx';
+import React, { useState, useEffect } from 'react';
+import ShapePreview from './ShapePreview';
 import { generateBlob } from '../../../utils';
-import type { BlobProps } from '../../../types.ts';
+import type { BlobProps } from '../../../types';
 
 interface Props {
     lastMutationTime: number;
@@ -37,6 +37,24 @@ export default function StoredShapes(props: Props) {
         }
     };
 
+    const deleteBlobByKey = async (key: string) => {
+        const response = await fetch('/api/blob', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ key })
+        });
+        const data = await response.json();
+        if (data.message) {
+            setKeys(keys.filter(k => k !== key));
+            if (selectedKey === key) {
+                setSelectedKey(null);
+                setPreviewData(null);
+            }
+        } else {
+            alert('Failed to delete the blob');
+        }
+    };
+
     useEffect(() => {
         getBlobKeyList();
     }, [lastMutationTime]);
@@ -49,18 +67,23 @@ export default function StoredShapes(props: Props) {
                     {keys?.length ? (
                         <div className="space-y-1">
                             {keys.map((keyName) => (
-                                <button
-                                    key={keyName}
-                                    className={
-                                        'btn btn-ghost btn-sm btn-block text-neutral-900 font-normal' +
-                                        (selectedKey === keyName ? ' bg-base-content/20 pointer-events-none' : '')
-                                    }
-                                    onClick={() => {
-                                        getBlobByKey(keyName);
-                                    }}
-                                >
-                                    {keyName}
-                                </button>
+                                <div key={keyName} className="flex justify-between">
+                                    <button
+                                        className={
+                                            'btn btn-ghost btn-sm btn-block text-neutral-900 font-normal' +
+                                            (selectedKey === keyName ? ' bg-base-content/20 pointer-events-none' : '')
+                                        }
+                                        onClick={() => getBlobByKey(keyName)}
+                                    >
+                                        {keyName}
+                                    </button>
+                                    <button
+                                        className="btn btn-danger btn-sm"
+                                        onClick={() => deleteBlobByKey(keyName)}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
                             ))}
                         </div>
                     ) : (
